@@ -1,0 +1,35 @@
+﻿@model List<Departamento>
+
+<h4 class="mb-4">Listado depts</h4>
+
+<table class="table table-active table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>LOCALIDAD</th>
+            <th>ACTIONS</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Departamento dept in Model)
+        {
+            <tr>
+                <td>@dept.IdDepartamento</td>
+                <td>@dept.Nombre</td>
+                <td>@dept.Localidad</td>
+                <td>
+                    <button class="btn btn-warning">
+                        @Html.ActionLink("Details", "Details", "Departamentos", new { id = dept.IdDepartamento})
+                    </button>
+                    <button class="btn btn-danger mx-auto">
+                        @Html.ActionLink("Delete", "Delete", "Departamentos", new { iddepartamento = dept.IdDepartamento})
+                    </button>
+                        <button class="btn btn-dark mx-auto">
+                        @Html.ActionLink("Update", "Update", "Departamentos", new { iddepartamento = dept.IdDepartamento})
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

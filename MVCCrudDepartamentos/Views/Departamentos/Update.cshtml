@@ -1,0 +1,18 @@
+﻿@model Departamento
+
+<h4 class="mb-4">Edit Dept</h4>
+
+<button class="btn btn-primary mb-4">
+    <a asp-controller="Departamentos" asp-action="Index" class="link-dark">Volver a Index</a>
+</button>
+
+<form method="post" class="form">
+    <input type="hidden" name="iddepartamento" class="form-control" required value="@Model.IdDepartamento"/>
+    <label>Nombre</label>
+    <input type="text" name="nombre" class="form-control" required value="@Model.Nombre" />
+    <label>Localidad</label>
+    <input type="text" name="localidad" class="form-control" required value="@Model.Localidad"/>
+    <button class="btn btn-info">Create</button>
+</form>
+
+<h4>@ViewData["MENSAJE"]</h4>
